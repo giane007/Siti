@@ -1,0 +1,209 @@
+/* Stile di base */
+body {
+    background-color: #f4f7fb;  /* Sfondo chiaro per una sensazione di pulizia */
+    padding-top: 30px;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;  /* Colore scuro per uno stile minimalista e moderno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Ombra per profondità */
+    border-radius: 10px;  /* Angoli arrotondati */
+    padding: 10px 20px;  /* Spazio interno */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cambia colore al passaggio del mouse */
+.navbar:hover {
+    background-color: #495057;  /* Colore più chiaro al passaggio del mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);  /* Aumento della profondità */
+}
+
+/* Navbar Brand */
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* Hover sul brand */
+.navbar .navbar-brand:hover {
+    color: #ff6b6b !important;
+}
+
+/* Menu */
+.navbar .navbar-nav {
+    margin-left: 0;
+}
+
+/* Link Navbar */
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #f8f9fa !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover sui link */
+.navbar .navbar-nav .nav-item .nav-link:hover,
+.navbar .navbar-nav .nav-item .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ff6b6b !important;
+}
+
+/* Dropdown */
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    background-color: #495057;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-item {
+    color: #f8f9fa;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-item:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+/* Toggler mobile */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+/* Navbar mobile */
+.navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+/* Colore link mobile */
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Card Hover */
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Hover card */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card body link */
+.card-body a {
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+}
+
+.card-body a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Immagini */
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;  /* Assicurati che le immagini siano responsivi */
+}
+
+/* Immagini hover */
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Link nel footer */
+footer a {
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Stile per il termine evidenziato */
+.termine {
+    font-weight: bold;
+    color: #495057;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.term-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.term-card i {
+    color: #007bff;
+    margin-left: 10px;
+}
+
+.row .col-md-6 {
+    margin-bottom: 20px;
+}
+
+/* Stile per la card body */
+.card-body {
+    padding: 20px;
+}
+
+/* Titoli in grassetto nella card */
+.card-body .termine {
+    font-weight: bold;
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TCP vs UDP</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="homepage.html">Homepage</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="socket.html">Socket</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Concetti
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="concettiComuni.html">Modello OSI</a></li>
+            <li><a class="dropdown-item" href="concettiComuni2.0.html">TCP vs UDP</a></li>
+          </ul>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="glossario.html">Glossario</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="display-4">Differenze tra i Protocolli TCP e UDP</h1>
+    <p>Due dei protocolli di comunicazione più comuni nel livello di trasporto sono TCP (Transmission Control Protocol) e UDP (User Datagram Protocol). Sebbene entrambi vengano utilizzati per la trasmissione dei dati in rete, essi differiscono per caratteristiche fondamentali.</p>
+
+    <h2>TCP (Transmission Control Protocol)</h2>
+    <p>TCP è un protocollo orientato alla connessione, il che significa che una connessione stabile deve essere stabilita tra il client e il server prima che i dati possano essere inviati. Offre garanzie di affidabilità, come il controllo degli errori e la ritrasmissione dei pacchetti persi. È utilizzato per applicazioni che richiedono una comunicazione sicura e senza perdite di dati, come il trasferimento di file o la navigazione web.</p>
+
+    <h3>Caratteristiche di TCP:</h3>
+    <ul>
+        <li>Connessione orientata</li>
+        <li>Controllo degli errori</li>
+        <li>Ritrasmissione dei pacchetti persi</li>
+        <li>Controllo di flusso</li>
+        <li>Affidabilità elevata</li>
+    </ul>
+
+    <h2>UDP (User Datagram Protocol)</h2>
+    <p>UDP, d'altra parte, è un protocollo senza connessione. Non stabilisce una connessione tra client e server, e non garantisce che i pacchetti arrivino a destinazione. È più veloce rispetto a TCP e viene utilizzato per applicazioni che necessitano di trasmissione rapida, come il live streaming o i giochi online, dove una piccola perdita di pacchetti non influisce gravemente sul servizio.</p>
+
+    <h3>Caratteristiche di UDP:</h3>
+    <ul>
+        <li>Protocollo senza connessione</li>
+        <li>Non offre controllo degli errori</li>
+        <li>Non garantisce la consegna dei pacchetti</li>
+        <li>È più veloce rispetto a TCP</li>
+        <li>Utilizzato per applicazioni in tempo reale</li>
+    </ul>
+
+    <img src="diffenze.webp" alt="TCP vs UDP">
+
+  </div>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <p>Francesco Marchetto 4F</p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
