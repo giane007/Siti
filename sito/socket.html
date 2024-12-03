@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Le Socket</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="homepage.html">Homepage</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="socket.html">socket</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            concetti
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="concettiComuni.html">Modello OSI</a></li>
+            <li><a class="dropdown-item" href="concettiComuni2.0.html">TCP vs UDP</a></li>
+          </ul>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="glossario.html">glossario</a>
+          </li>
+      </ul>
+    </div>
+</nav>
+    <div class="container mt-5">
+        <h1 class="display-4">Le Socket: Un Meccanismo Fondamentale per la Comunicazione nelle Reti</h1>
+        <p>Le socket sono un componente essenziale per la comunicazione tra dispositivi in una rete. Vengono utilizzate per inviare e ricevere dati tra server e client, costituendo la base per la maggior parte delle applicazioni di rete, come il web browsing, la posta elettronica, lo streaming e tanto altro.</p>
+
+        <div class="accordion" id="socketAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Cos'è una Socket?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#socketAccordion">
+                    <div class="accordion-body">
+                        Una <strong>socket</strong> è un endpoint per la comunicazione di rete, un'interfaccia software che consente la trasmissione e la ricezione dei dati. È essenziale per lo scambio di informazioni tra due dispositivi, come un server e un client, sulla stessa rete o attraverso Internet. Ogni socket è identificata da un indirizzo IP e da un numero di porta, che insieme definiscono un "canale" di comunicazione univoco.
+                        <br><br>
+                        Le socket possono essere classificate in due tipologie principali:
+                        <ul>
+                            <li><strong>Stream Socket (TCP)</strong>: Usa il protocollo TCP (Transmission Control Protocol), che assicura una connessione stabile, affidabile e ordinata. È ideale per applicazioni che richiedono una comunicazione continua, come il web browsing, il trasferimento di file o le chiamate VoIP.</li>
+                            <li><strong>Datagram Socket (UDP)</strong>: Utilizza il protocollo UDP (User Datagram Protocol), che non garantisce l'ordine o l'affidabilità dei pacchetti, ma è più veloce. Viene usato per applicazioni in tempo reale come il gaming online o lo streaming di video, dove la velocità è più importante della precisione.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Tipologie di Socket
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#socketAccordion">
+                    <div class="accordion-body">
+                        Le principali tipologie di socket, come accennato prima, sono le socket di tipo <strong>Stream</strong> e <strong>Datagram</strong>, ma andiamo più nel dettaglio:
+                        <ul>
+                            <li><strong>Stream Socket (TCP)</strong>: Viene utilizzato quando la comunicazione deve essere affidabile e i dati devono arrivare nell'ordine corretto. Il protocollo TCP garantisce l'affidabilità della comunicazione attraverso la gestione dell'handshaking (un processo di negoziazione iniziale tra client e server), la ritrasmissione dei pacchetti persi e il controllo del flusso di dati. Questo tipo di socket è utilizzato per la navigazione web (HTTP), l'invio di email (SMTP, IMAP) e il trasferimento di file (FTP).</li>
+                            <li><strong>Datagram Socket (UDP)</strong>: A differenza di TCP, UDP non fornisce garanzie riguardo l'affidabilità e l'ordine dei pacchetti, ma è estremamente veloce e più efficiente nelle comunicazioni ad alta velocità. È molto utilizzato in applicazioni dove la velocità è cruciale, come nel caso dello streaming audio/video, delle comunicazioni VoIP (Voice over IP) e nei giochi online multiplayer.</li>
+                        </ul>
+                        <img src="tiposocket.png" alt="Tipologie di Socket" class="img-fluid mt-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Processo di comunicazione (Server e Client)
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#socketAccordion">
+                    <div class="accordion-body">
+                        La comunicazione tra client e server avviene in un processo ben definito che si sviluppa in più fasi:
+                        <ul>
+                            <li><strong>Il Server</strong> si avvia in ascolto su una specifica porta e indirizzo IP. In pratica, il server rimane in attesa di richieste di connessione dai client. Quando un client invia una richiesta, il server la accetta e stabilisce una connessione.</li>
+                            <li><strong>Il Client</strong> apre una connessione con il server attraverso una socket, invia una richiesta e riceve una risposta. Il client può essere un browser web, una app mobile o un altro tipo di applicazione che interagisce con il server per ottenere dati o eseguire operazioni.</li>
+                            <li>Una volta stabilita la connessione, i dati possono essere scambiati tra i due dispositivi. In TCP, questo scambio è affidabile e ordinato, mentre con UDP non c'è garanzia che i dati arrivino correttamente o nell'ordine giusto.</li>
+                        </ul>
+                        Questo processo consente la comunicazione tra dispositivi in rete, formando la base per molte applicazioni moderne. 
+                        <br><br>
+                        <img src="connessione.png" alt="Server e Client" class="img-fluid mt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-5">
+      <p>Creato da Andrei - Classe 5E</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

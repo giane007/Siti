@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- FontAwesome per le icone -->
+    <link rel="stylesheet" href="style.css"> <!-- Collegamento al file CSS esterno -->
+    <title>Glossario - Socket Web</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="homepage.html">Homepage</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="socket.html">socket</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                concetti
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="concettiComuni.html">Modello OSI</a></li>
+                <li><a class="dropdown-item" href="concettiComuni2.0.html">TCP vs UDP</a></li>
+              </ul>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="glossario.html">glossario</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- Contenuto principale della pagina Glossario -->
+    <div class="container">
+        <h1>Glossario dei Termini Tecnici</h1>
+        <p>Scopri i principali termini utilizzati nel sito. Clicca su ogni termine per maggiori dettagli.</p>
+
+        <!-- Card per ogni termine -->
+        <div class="row">
+            <!-- Card per "Socket" -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="term-card">
+                            <span class="termine"><a href="https://www.ibm.com/docs/it/i/7.5?topic=programming-how-sockets-work" target="_blank">Socket</a></span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p>Una socket è un endpoint per la comunicazione in una rete di computer. È un punto di contatto tra un programma client e un programma server, che consente loro di comunicare attraverso una rete come TCP/IP.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card per "Socket Stream" -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="term-card">
+                            <span class="termine"><a href="https://www.ibm.com/docs/it/aix/7.3?topic=protocols-socket-types" target="_blank">Socket Stream</a></span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p>Tipo di socket utilizzato per comunicazioni in cui i dati vengono inviati in un flusso continuo, tipico dei protocolli come TCP. Garantisce la consegna e l'ordine dei pacchetti.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card per "Socket Datagram" -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="term-card">
+                            <span class="termine"><a href="https://www.ibm.com/docs/it/aix/7.3?topic=protocols-socket-types" target="_blank">Socket Datagram</a></span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p>Tipo di socket che invia i dati come pacchetti distinti, senza garantire la consegna. È utilizzato nei protocolli come UDP, che sono più veloci ma meno affidabili.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card per "TCP" -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="term-card">
+                            <span class="termine"><a href="https://it.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank">TCP</a></span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p>Il TCP (Transmission Control Protocol) è un protocollo di trasmissione dati orientato alla connessione, che garantisce l'affidabilità e l'ordine dei pacchetti.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card per "UDP" -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="term-card">
+                            <span class="termine"><a href="https://it.wikipedia.org/wiki/User_Datagram_Protocol" target="_blank">UDP</a></span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <p>UDP (User Datagram Protocol) è un protocollo di trasmissione dati senza connessione, che invia pacchetti senza garantire la consegna o l'ordine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>Creato da Andrei - Classe 5E</p>
+    </footer>
+
+
+    <!-- Bootstrap JS (incluso anche Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
