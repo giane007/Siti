@@ -1,0 +1,144 @@
+{
+  "general": {
+    "siteName": "FitGear Pro",
+    "navHome": "Home",
+    "navProducts": "Prodotti",
+    "navCart": "Carrello",
+    "footerText": "© 2023 FitGear Pro. Tutti i diritti riservati."
+  },
+  "index": {
+    "title": "Benvenuto su FitGear Pro",
+    "subtitle": "Il tuo negozio di fiducia per attrezzature fitness di alta qualità",
+    "featuredProducts": [1, 2, 3, 4]
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Set di Manubri Regolabili",
+      "description": "Set di manubri regolabili per tutte le tue esigenze di allenamento",
+      "price": 299.99,
+      "image": "dumbbell-set.jpg",
+      "category": "Pesi",
+      "features": [
+        "Pesi regolabili da 5 a 52,5 libbre",
+        "Sistema di selezione rapida",
+        "Design compatto",
+        "Materiali di alta qualità"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tapis Roulant Ultra",
+      "description": "Tapis roulant ad alte prestazioni con funzionalità avanzate",
+      "price": 1299.99,
+      "image": "treadmill.jpg",
+      "category": "Cardio",
+      "features": [
+        "Inclinazione fino al 15%",
+        "Display touchscreen HD da 22 pollici",
+        "Programmi di allenamento integrati",
+        "Design pieghevole"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Power Rack",
+      "description": "Power rack robusto per sollevamento pesi",
+      "price": 599.99,
+      "image": "power-rack.jpg",
+      "category": "Forza",
+      "features": [
+        "Multiple posizioni per pull-up",
+        "Barre di sicurezza regolabili",
+        "Compatibile con bilancieri olimpici",
+        "Capacità di carico: 500 kg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Tappetino Yoga Pro",
+      "description": "Tappetino extra spesso per comfort e stabilità",
+      "price": 49.99,
+      "image": "yoga-mat.WEBP",
+      "category": "Accessori",
+      "features": [
+        "Spessore di 6 mm per proteggere le articolazioni",
+        "Superficie antiscivolo",
+        "Materiali ecologici",
+        "Include cinghia per il trasporto"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Set di Fasce Elastiche",
+      "description": "Fasce elastiche versatili per allenamento e riabilitazione",
+      "price": 29.99,
+      "image": "resistance-bands.jpg",
+      "category": "Accessori",
+      "features": [
+        "Set di 5 fasce con diversi livelli di resistenza",
+        "Include ancoraggio per porta e cinghie per caviglie",
+        "Leggero e portatile",
+        "Adatto a tutti i livelli di fitness"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Bilanciere Olimpico",
+      "description": "Bilanciere di alta qualità per sollevamento pesi e powerlifting",
+      "price": 249.99,
+      "image": "olympic-barbell.WEBP",
+      "category": "Pesi",
+      "features": [
+        "Peso: 20 kg, Lunghezza: 2,2 m",
+        "Impugnatura ruvida per una presa sicura",
+        "Capacità di carico: 680 kg",
+        "Adatto per sollevamenti olimpici e powerlifting"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Panca Regolabile",
+      "description": "Panca versatile per vari esercizi",
+      "price": 179.99,
+      "image": "adjustable-bench.jpg",
+      "category": "Forza",
+      "features": [
+        "7 posizioni regolabili da declinato a 90 gradi",
+        "Telaio in acciaio resistente",
+        "Rivestimento in pelle comodo",
+        "Pieghevole per un facile riposo"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Set di Kettlebell",
+      "description": "Set di kettlebell in ghisa per allenamento funzionale",
+      "price": 129.99,
+      "image": "kettlebell-set.WEBP",
+      "category": "Pesi",
+      "features": [
+        "Set include kettlebell da 5 kg, 8 kg e 12 kg",
+        "Finitura in polvere per maggiore durata",
+        "Maniglie larghe per una presa comoda",
+        "Base piatta per maggiore stabilità"
+      ]
+    }
+  ],
+  "cart": {
+    "title": "Il Tuo Carrello",
+    "emptyCartMessage": "Il tuo carrello è vuoto. Inizia a fare acquisti!",
+    "couponTitle": "Applica un Codice Sconto",
+    "couponPlaceholder": "Inserisci il codice sconto",
+    "applyCouponButton": "Applica",
+    "totalTitle": "Totale",
+    "checkoutButton": "Procedi al Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "personalInfoTitle": "Informazioni Personali",
+    "shippingAddressTitle": "Indirizzo di Spedizione",
+    "paymentInfoTitle": "Informazioni di Pagamento",
+    "placeOrderButton": "Conferma Ordine"
+  }
+}

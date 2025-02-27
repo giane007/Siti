@@ -1,0 +1,265 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+header {
+  background: linear-gradient(135deg, #007bff, #004085);
+  padding: 100px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+header p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.product-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+#cart-items .card {
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+#cart-items .card-body {
+  padding: 1rem;
+}
+
+#cart-items img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+#cart-items .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+#cart-items .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+#cart-items .btn-danger {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes discountPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animazione per il pulsante "Aggiungi al Carrello" */
+.add-to-cart-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #28a745;
+  transform: scale(1.05);
+}
+
+/* Animazione per il carrello */
+.cart-badge {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  animation: pulse 1s infinite;
+}
+
+/* Animazione per il prezzo scontato */
+.discounted-price {
+  color: #28a745;
+  font-weight: bold;
+  animation: discountPop 0.5s ease;
+}
+
+.discounted-price::before {
+  content: "€";
+}
+
+/* Animazione per il pulsante "Conferma Ordine" */
+#place-order-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#place-order-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}

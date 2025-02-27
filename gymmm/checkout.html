@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGear Pro - Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FitGear Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Prodotti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Carrello</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">Checkout</h1>
+        <form id="checkout-form">
+            <div class="mb-4">
+                <h2>Informazioni Personali</h2>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h2>Indirizzo di Spedizione</h2>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Indirizzo</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">Città</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="mb-3">
+                    <label for="zip" class="form-label">CAP</label>
+                    <input type="text" class="form-control" id="zip" required>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h2>Informazioni di Pagamento</h2>
+                <div class="mb-3">
+                    <label for="card-number" class="form-label">Numero Carta</label>
+                    <input type="text" class="form-control" id="card-number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiry" class="form-label">Data di Scadenza</label>
+                    <input type="text" class="form-control" id="expiry" placeholder="MM/AA" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="place-order-btn">Conferma Ordine</button>
+        </form>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>© 2023 FitGear Pro. Tutti i diritti riservati.</p>
+            <p><a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Termini e Condizioni</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

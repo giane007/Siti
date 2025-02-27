@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitGear Pro - Il tuo negozio di fiducia per attrezzature fitness di alta qualità. Scopri le nostre offerte su tapis roulant, manubri, bilancieri e molto altro.">
+    <meta name="keywords" content="fitness, attrezzature, palestra, tapis roulant, manubri, bilancieri, yoga, kettlebell">
+    <meta name="author" content="FitGear Pro">
+    <title>FitGear Pro - Attrezzature Fitness di Alta Qualità</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FitGear Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Prodotti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Carrello <span id="cart-badge" class="cart-badge"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Benvenuto su FitGear Pro</h1>
+            <p class="lead">Attrezzature fitness di alta qualità per il tuo benessere</p>
+            <a href="products.html" class="btn btn-light btn-lg">Scopri i Prodotti</a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Prodotti in Evidenza</h2>
+            <div class="row" id="featured-products">
+                <!-- I prodotti in evidenza verranno inseriti qui dinamicamente -->
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Perché Scegliere FitGear Pro?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Qualità Premium</h3>
+                            <p class="card-text">Materiali di alta qualità e design robusto per durare nel tempo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Spedizione Veloce</h3>
+                            <p class="card-text">Consegna rapida e sicura in tutta Italia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Supporto Clienti</h3>
+                            <p class="card-text">Assistenza dedicata per ogni tua esigenza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>© 2023 FitGear Pro. Tutti i diritti riservati.</p>
+            <p><a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Termini e Condizioni</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
