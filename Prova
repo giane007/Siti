@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLTRE IL LIMITE</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .highlight {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            margin: 20px 0;
+        }
+
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+
+        .exercise:hover {
+            background-color: #e0f7fa;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-page {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .intro-page h1 {
+            font-size: 3rem;
+            color: #4CAF50;
+        }
+
+        .intro-page p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .intro-page button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .intro-page button:hover {
+            background-color: #45a049;
+        }
+
+        .calculator {
+            margin: 20px 0;
+        }
+
+        .calculator input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .calculator button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pagina Introduttiva -->
+    <div class="intro-page" id="intro-page">
+        <h1>Benvenuto su OLTRE IL LIMITE</h1>
+        <p>Esplora il mondo dei limiti matematici con un approccio moderno e interattivo.</p>
+        <p>Questo sito ti guiderà attraverso definizioni, esempi pratici, esercizi e molto altro.</p>
+        <button onclick="enterSite()">Entra nel Sito</button>
+    </div>
+
+    <!-- Contenuto Principale (nascosto inizialmente) -->
+    <div id="main-content" style="display: none;">
+
+        <header>
+            <h1>OLTRE IL LIMITE</h1>
+            <p>Esplora il mondo dei limiti matematici con stile!</p>
+        </header>
+
+        <nav>
+            <a href="#partecipanti">Partecipanti</a>
+            <a href="#dizionario">Dizionario</a>
+            <a href="#limite">Definizione</a>
+            <a href="#caso-particolare">Casi Speciali</a>
+            <a href="#calcolo-limite">Calcolo</a>
+            <a href="#esercizi">Esercizi</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+
+        <section id="partecipanti">
+            <h2>Partecipanti</h2>
+            <p>Ecco i nomi dei partecipanti al progetto:</p>
+            <ul>
+                <li>Marchetto Francesco</li>
+                <li>Nome Cognome 2</li>
+                <li>Nome Cognome 3</li>
+            </ul>
+        </section>
+
+        <section id="dizionario">
+            <h2>Dizionario</h2>
+            <p>Ecco alcuni termini matematici e formule utilizzati nel sito:</p>
+            <div class="highlight">
+                <dl>
+                    <dt>Limite</dt>
+                    <dd>Il valore a cui una funzione tende quando la variabile indipendente si avvicina a un certo punto.</dd>
+                    <img src="https://latex.codecogs.com/svg.image?\lim_{{x\to&space;x_0}}f(x)=L" alt="Definizione di Limite">
+                    
+                    <dt>Definizione Formale di Limite</dt>
+                    <dd>Per ogni numero positivo \( \epsilon \) (epsilon), esiste un numero positivo \( \delta \) (delta) tale che per tutti gli \( x \) diversi da \( x_0 \) e con \( |x - x_0| < \delta \), si ha \( |f(x) - L| < \epsilon \).</dd>
+                    <img src="https://latex.codecogs.com/svg.image?\forall&space;\epsilon&space;>&space;0,&space;\exists&space;\delta&space;>&space;0&space;:&space;|x-x_0|<\delta&space;\Rightarrow&space;|f(x)-L|<\epsilon" alt="Definizione Formale di Limite">
+                    
+                    <dt>Infinito</dt>
+                    <dd>Un concetto che rappresenta qualcosa senza limite o senza fine.</dd>
+                    <img src="https://latex.codecogs.com/svg.image?\infty" alt="Simbolo di Infinito">
+                    
+                    <dt>Asintoto</dt>
+                    <dd>Una linea a cui una curva si avvicina indefinitamente senza mai toccarla.</dd>
+                    <img src="https://www.mathsisfun.com/calculus/images/asymptote.svg" alt="Asintoto">
+                </dl>
+            </div>
+        </section>
+    
+        <section id="limite">
+            <h2>Definizione Generale di Limite</h2>
+            <p>Il limite di una funzione è un concetto fondamentale in matematica che descrive il comportamento di una funzione quando la sua variabile indipendente si avvicina a un determinato valore.</p>
+            <p><strong>Formula Generale del Limite:</strong></p>
+            <img src="https://latex.codecogs.com/svg.image?\lim_{{x\to&space;x_0}}f(x)=L" alt="Formula Generale del Limite">
+            <p>Questa formula indica che, man mano che \( x \) si avvicina a \( x_0 \), \( f(x) \) si avvicina arbitrariamente a \( L \).</p>
+        </section>
+    
+
+        <section id="caso-particolare">
+            <h2>Caso Particolare: \( x_0 \) e \( L \) tendenti a infinito</h2>
+            <p>Quando sia \( x_0 \) che \( L \) tendono a infinito, il limite descrive il comportamento della funzione quando la variabile indipendente cresce senza limiti e la funzione stessa cresce o decresce senza limiti.</p>
+            <p>Ad esempio:</p>
+            <img src="https://latex.codecogs.com/svg.image?\lim_{{x\to\infty}}\frac{1}{x}=0" alt="Limite all'infinito">
+            <p>Questo significa che, man mano che \( x \) diventa molto grande, \( \frac{1}{x} \) si avvicina a 0.</p>
+            <img src="https://www.mathsisfun.com/calculus/images/limit-infinity.svg" alt="Limite all'infinito">
+        </section>
+
+        <section id="calcolo-limite">
+            <h2>Calcolo del Limite</h2>
+            <p>Il limite può essere calcolato utilizzando una formula o rappresentato graficamente. Ecco un esempio:</p>
+            <h3>Calcolo tramite Formula</h3>
+            <p>Consideriamo la funzione \( f(x) = \frac{x^2 - 1}{x - 1} \). Per calcolare il limite quando \( x \) tende a 1:</p>
+            <img src="https://latex.codecogs.com/svg.image?\lim_{{x\to&space;1}}\frac{x^2-1}{x-1}=\lim_{{x\to&space;1}}\frac{(x-1)(x+1)}{x-1}=\lim_{{x\to&space;1}}(x+1)=2" alt="Calcolo del Limite">
+            <h3>Calcolatore di Limiti</h3>
+            <div class="calculator">
+                <input type="text" id="functionInput" placeholder="Inserisci la funzione (es. (x^2-1)/(x-1))">
+                <input type="text" id="limitInput" placeholder="Inserisci il valore di x (es. 1)">
+                <button onclick="calculateLimit()">Calcola Limite</button>
+                <div class="result" id="result"></div>
+            </div>
+            <h3>Rappresentazione Grafica</h3>
+            <canvas id="grafico" width="400" height="400"></canvas>
+            <script>
+                const canvas = document.getElementById('grafico');
+                const ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(50, 350);
+                ctx.lineTo(350, 350);
+                ctx.moveTo(200, 50);
+                ctx.lineTo(200, 350);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.strokeStyle = 'red';
+                for (let x = -10; x <= 10; x += 0.1) {
+                    const y = (x * x - 1) / (x - 1);
+                    ctx.lineTo(200 + x * 20, 350 - y * 20);
+                }
+                ctx.stroke();
+
+            function calculateLimit() {
+                const functionInput = document.getElementById('functionInput').value;
+                const limitInput = document.getElementById('limitInput').value;
+                const resultElement = document.getElementById('result');
+
+                try {
+                    let result;
+
+                    // Caso speciale: sin(x)/x quando x -> 0
+                    if (functionInput === 'sin(x)/x' && limitInput === '0') {
+                        result = 1;
+                    } else {
+                        // Calcolo generico
+                        const expression = functionInput.replace(/x/g, limitInput);
+                        result = math.evaluate(expression);
+                    }
+
+                    // Mostra il risultato
+                    resultElement.innerText = `Il limite è: ${result}`;
+                } catch (error) {
+                    resultElement.innerText = 'Errore: funzione non valida o valore non supportato.';
+                }
+            }
+            </script>
+        </section>
+
+        <section id="esercizi">
+            <h2>Esercizi di Calcolo</h2>
+            <p>Prova a risolvere questi esercizi:</p>
+            <div class="exercise">
+                <p><strong>Esercizio 1:</strong> Calcola \( \lim_{{x \to 2}} (3x + 4) \).</p>
+                <p><strong>Soluzione:</strong> Sostituisci \( x = 2 \) nella funzione: \( 3(2) + 4 = 10 \).</p>
+            </div>
+            <div class="exercise">
+                <p><strong>Esercizio 2:</strong> Trova \( \lim_{{x \to \infty}} \frac{2x^2 + 3x + 1}{x^2 + 5} \).</p>
+                <p><strong>Soluzione:</strong> Dividi numeratore e denominatore per \( x^2 \): \( \frac{2 + \frac{3}{x} + \frac{1}{x^2}}{1 + \frac{5}{x^2}} \). Quando \( x \to \infty \), i termini con \( \frac{1}{x} \) e \( \frac{1}{x^2} \) tendono a 0, quindi il limite è \( 2 \).</p>
+            </div>
+            <div class="exercise">
+                <p><strong>Esercizio 3:</strong> Determina \( \lim_{{x \to 0}} \frac{\sin(x)}{x} \).</p>
+                <p><strong>Soluzione:</strong> Questo è un limite notevole. Il risultato è \( 1 \).</p>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <h2>Contatti</h2>
+            <p>Per ulteriori informazioni, contattaci:</p>
+            <p>Email: <a href="mailto:info@oltrelimite.it">info@oltrelimite.it</a></p>
+            <p>Telefono: +39 123 456789</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 OLTRE IL LIMITE. Tutti i diritti riservati.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById('intro-page').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
