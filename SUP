@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLTRE IL LIMITE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation Styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Highlight Box Styling */
+        .highlight {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            margin: 20px 0;
+        }
+
+        /* Canvas Styling */
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Exercise Box Styling */
+        .exercise {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+
+        .exercise:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Image Styling */
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Intro Page Styling */
+        .intro-page {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .intro-page h1 {
+            font-size: 3rem;
+            color: #4CAF50;
+        }
+
+        .intro-page p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .intro-page button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .intro-page button:hover {
+            background-color: #45a049;
+        }
+
+        /* Calculator Styling */
+        .calculator {
+            margin: 20px 0;
+        }
+
+        .calculator input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .calculator button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: #45a049;
+        }
+
+        .icon {
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        .audio-icon {
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 1.2rem;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Introductory Page -->
+    <div class="intro-page" id="intro-page">
+        <h1>Benvenuto su OLTRE IL LIMITE</h1>
+        <p>Esplora il mondo dei limiti matematici con un approccio moderno e interattivo.</p>
+        <p>Questo sito ti guiderà attraverso definizioni, esempi pratici, esercizi e molto altro.</p>
+        <button onclick="enterSite()">Entra nel Sito</button>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="main-content" style="display: none;">
+
+        <header>
+            <h1>OLTRE IL LIMITE</h1>
+            <p>Esplora il mondo dei limiti matematici con stile!</p>
+        </header>
+
+        <nav>
+            <a href="#partecipanti">Partecipanti</a>
+            <a href="#dizionario">Dizionario</a>
+            <a href="#limite">Definizione</a>
+            <a href="#caso-particolare">Casi Speciali</a>
+            <a href="#calcolo-limite">Calcolo</a>
+            <a href="#esercizi">Esercizi</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+
+        <section id="partecipanti">
+            <h2>Partecipanti</h2>
+            <p>Ecco i nomi dei partecipanti al progetto:</p>
+            <ul>
+                <li>Marchetto Francesco</li>
+                <li>Nome Cognome 2</li>
+                <li>Nome Cognome 3</li>
+            </ul>
+        </section>
+
+        <section id="dizionario">
+            <h2>Dizionario</h2>
+            <p>Ecco alcuni termini matematici e formule utilizzati nel sito:</p>
+            <div class="highlight">
+                <dl>
+                    <dt>Limite</dt>
+                    <dd>Il valore a cui una funzione tende quando la variabile indipendente si avvicina a un certo punto.</dd>
+                    <img src="https://latex.codecogs.com/svg.image?\lim_{{x\to&space;x_0}}f(x)=L" alt="Definizione di Limite">
+                    
+                    <dt>Definizione Formale di Limite</dt>
+                    <dd>Per ogni numero positivo \( \epsilon \) (epsilon), esiste un numero positivo \( \delta \) (delta) tale che per tutti gli \( x \) diversi da \( x_0 \), la distanza tra \( f(x) \) e \( L \) è minore di \( \epsilon \), se la distanza tra \( x \) e \( x_0 \) è minore di \( \delta \).</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="limite">
+            <h2>Definizione di Limite</h2>
+            <p>La definizione formale del limite di una funzione è la seguente:</p>
+            <p>\( \lim_{{x \to a}} f(x) = L \), significa che, per ogni valore di \( \epsilon > 0 \), esiste un \( \delta > 0 \) tale che per ogni \( x \) in un intervallo \( (a-\delta, a+\delta) \) diverso da \( a \), \( |f(x) - L| < \epsilon \).</p>
+        </section>
+
+        <section id="caso-particolare">
+            <h2>Casi Particolari di Limiti</h2>
+            <p>Esistono casi particolari nei quali il calcolo del limite risulta più semplice, come:</p>
+            <ul>
+                <li>Limite all'infinito</li>
+                <li>Limite di funzioni continue</li>
+                <li>Limite di funzioni a tratti</li>
+            </ul>
+        </section>
+
+        <section id="calcolo-limite">
+            <h2>Calcolo del Limite</h2>
+            <p>Utilizzando la definizione formale, possiamo calcolare il limite di funzioni reali.</p>
+            <div class="calculator">
+                <input type="text" id="expression" placeholder="Inserisci espressione">
+                <button onclick="calculateLimit()">Calcola Limite</button>
+            </div>
+            <div class="result" id="result"></div>
+        </section>
+
+        <section id="esercizi">
+            <h2>Esercizi</h2>
+            <p>Ecco alcuni esercizi per testare la tua comprensione dei limiti.</p>
+            <div class="exercise">Esercizio 1: Calcola \( \lim_{{x \to 0}} \frac{1}{x} \)</div>
+            <div class="exercise">Esercizio 2: Calcola \( \lim_{{x \to 0}} \frac{\sin(x)}{x} \)</div>
+        </section>
+
+        <footer id="contatti">
+            <p>&copy; 2025 OLTRE IL LIMITE. Tutti i diritti riservati.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById("intro-page").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }
+
+        function calculateLimit() {
+            const expr = document.getElementById("expression").value;
+            try {
+                const result = math.evaluate(expr);
+                document.getElementById("result").innerText = `Il risultato è: ${result}`;
+            } catch (error) {
+                document.getElementById("result").innerText = "Errore nel calcolo. Assicurati che l'espressione sia valida.";
+            }
+        }
+    </script>
+</body>
+</html>
