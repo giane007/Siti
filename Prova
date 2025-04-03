@@ -4,7 +4,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLTRE IL LIMITE</title>
+    <title>VAI OLTRE IL LIMITE...</title>
     <style>
         /* Reset CSS */
         * {
@@ -204,7 +204,7 @@
 
     <!-- Pagina Introduttiva -->
     <div class="intro-page" id="intro-page">
-        <h1>Benvenuto su OLTRE IL LIMITE</h1>
+        <h1>Benvenuto su VAI OLTRE IL LIMITE</h1>
         <p>Esplora il mondo dei limiti matematici con un approccio moderno e interattivo.</p>
         <p>Questo sito ti guiderà attraverso definizioni, esempi pratici, esercizi e molto altro.</p>
         <button onclick="enterSite()">Entra nel Sito</button>
@@ -214,7 +214,7 @@
     <div id="main-content" style="display: none;">
 
         <header>
-            <h1>OLTRE IL LIMITE</h1>
+            <h1>VAI OLTRE IL LIMITE...</h1>
             <p>Esplora il mondo dei limiti matematici con stile!</p>
         </header>
 
@@ -230,17 +230,19 @@
 
         <section id="partecipanti">
             <h2>Partecipanti</h2>
-            <p>Ecco i nomi dei partecipanti al progetto:</p>
+            <p>Nomi dei partecipanti al progetto:</p>
             <ul>
                 <li>Marchetto Francesco</li>
-                <li>Nome Cognome 2</li>
-                <li>Nome Cognome 3</li>
+                <li>Poli Alessio</li>
+                <li>Redi Giacomo</li>
+                <li>Gianesella Riccardo</li>
+                <li>Visentini Nicolò</li>
             </ul>
         </section>
 
         <section id="dizionario">
             <h2>Dizionario</h2>
-            <p>Ecco alcuni termini matematici e formule utilizzati nel sito:</p>
+            <p>Termini matematici e formule utilizzati nel sito:</p>
             <div class="highlight">
                 <dl>
                     <dt>Limite</dt>
